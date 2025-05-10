@@ -1,0 +1,35 @@
+---
+layout: page
+title: Gallery
+permalink: /gallery/
+---
+
+<div class="gallery-sections">
+  <a href="{{ '/gallery/2024/' | relative_url }}" class="gallery-section">
+    <h2>2024 Works</h2>
+    <p>View the latest collection</p>
+  </a>
+  
+  <a href="{{ '/gallery/2023/' | relative_url }}" class="gallery-section">
+    <h2>2023 Works</h2>
+    <p>View the previous collection</p>
+  </a>
+  
+  <!-- Add links to other year collections as needed -->
+</div>
+
+<div class="gallery-grid">
+  {% for artwork in site.artworks %}
+  <div class="gallery-item">
+    <div class="gallery-image-container">
+      <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}" class="gallery-image">
+    </div>
+    <div class="gallery-item-info">
+      <h3>{{ artwork.title }}</h3>
+      <p>{{ artwork.year }}</p>
+      <p class="tiny-text">{{ artwork.medium }}{% if artwork.dimensions %}, {{ artwork.dimensions }}{% endif %}</p>
+      <p class="tiny-text">{{ artwork.content }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div> 

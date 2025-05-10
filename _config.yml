@@ -1,0 +1,30 @@
+title: Anna Aalto
+description: Anna Aalto - Artist Portfolio
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+  sass_dir: _sass
+  load_paths:
+    - _sass
+    - assets/scss
+  sourcemap: never
+
+collections:
+  artworks:
+    output: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore

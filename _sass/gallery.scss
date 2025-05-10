@@ -1,0 +1,164 @@
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-unit;
+  margin-top: $spacing-unit;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Yearly gallery specific styles
+.yearly-gallery {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    
+    .gallery-item-info {
+      opacity: 1;
+    }
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+  }
+  
+  .gallery-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  
+  .gallery-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .gallery-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: $spacing-unit / 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    
+    h3 {
+      margin-bottom: $spacing-unit / 4;
+      font-size: 1.1rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+    
+    .tiny-text {
+      font-size: 0.7rem;
+      margin-top: 0.25rem;
+      opacity: 0.8;
+    }
+  }
+}
+
+// Yearly gallery item styles
+.yearly-item {
+  margin-bottom: $spacing-unit * 2;
+  
+  &:hover {
+    transform: none;
+  }
+  
+  .gallery-image-container {
+    height: 500px;
+  }
+  
+  img, .gallery-image {
+    max-height: 500px;
+  }
+  
+  .visible-info {
+    position: static;
+    opacity: 1;
+    background: none;
+    color: inherit;
+    padding: $spacing-unit / 2 0;
+    
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 0.1rem;
+    }
+    
+    .tiny-text {
+      font-size: 0.7rem;
+      color: #666;
+      margin-top: 0.1rem;
+    }
+  }
+}
+
+.artwork {
+  max-width: 800px;
+  margin: 0 auto;
+  
+  .artwork-image {
+    margin-bottom: $spacing-unit;
+    
+    img {
+      max-height: 70vh;
+      margin: 0 auto;
+    }
+  }
+  
+  .artwork-details {
+    margin-bottom: $spacing-unit;
+    
+    p {
+      margin-bottom: $spacing-unit / 4;
+    }
+  }
+  
+  .artwork-description {
+    margin-bottom: $spacing-unit;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: $spacing-unit;
+    font-weight: 500;
+  }
+} 

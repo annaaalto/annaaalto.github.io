@@ -1,0 +1,19 @@
+{% assign gallery_items = site.artworks | where: "year", include.year %}
+
+<h1 class="page-title">Works from {{ include.year }}</h1>
+
+<div class="gallery-grid yearly-gallery">
+  {% for artwork in gallery_items %}
+  <div class="gallery-item yearly-item">
+    <div class="gallery-image-container">
+      <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}" class="gallery-image">
+    </div>
+    <div class="gallery-item-info visible-info">
+      <h3>{{ artwork.title }}</h3>
+      <p>{{ artwork.year }}</p>
+      <p class="tiny-text">{{ artwork.medium }}{% if artwork.dimensions %}, {{ artwork.dimensions }}{% endif %}</p>
+      <p class="tiny-text">{{ artwork.content }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div> 

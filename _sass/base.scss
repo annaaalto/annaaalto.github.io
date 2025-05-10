@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $base-font;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: 700;
+  margin-bottom: $spacing-unit / 2;
+}
+
+p {
+  margin-bottom: $spacing-unit / 2;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit / 2;
+}
+
+.btn {
+  display: inline-block;
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: lighten($primary-color, 15%);
+    text-decoration: none;
+  }
+} 

@@ -1,0 +1,30 @@
+---
+layout: default
+title: Home
+---
+
+<section class="home-hero">
+  <h1>Anna Aalto</h1>
+  <p>A collection of artworks created with passion and dedication. Explore the gallery to discover unique pieces that tell stories and evoke emotions.</p>
+  <a href="{{ '/gallery' | relative_url }}" class="btn">View Gallery</a>
+</section>
+
+<section class="featured-works">
+  <h2>Featured Works</h2>
+  <div class="featured-grid">
+    {% assign featured_works = site.artworks | where: "featured", true | limit: 3 %}
+    {% for artwork in featured_works %}
+    <div class="gallery-item">
+      <div class="gallery-image-container">
+        <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}" class="gallery-image">
+      </div>
+      <div class="gallery-item-info">
+        <h3>{{ artwork.title }}</h3>
+        <p>{{ artwork.year }}</p>
+        <p class="tiny-text">{{ artwork.medium }}{% if artwork.dimensions %}, {{ artwork.dimensions }}{% endif %}</p>
+        <p class="tiny-text">{{ artwork.content }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section> 
