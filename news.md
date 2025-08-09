@@ -12,9 +12,9 @@ Welcome to my newest collection of works! This page features my most recent arti
 
 Here you'll find my newest pieces, straight from the studio. These works represent my current artistic focus and experimentation.
 
-### Upcoming Exhibitions
+### Upcoming Installations
 
-Stay tuned for information about upcoming exhibitions and events where you can see my work in person.
+Stay tuned for information about upcoming installations and events where you can see my work in person.
 
 ### Work in Progress
 

@@ -8,6 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  
+  <!-- Favicon and PWA Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/icons/favicon-16x16.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/icons/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <meta name="theme-color" content="#ffffff">
+  
   {% seo %}
 </head>
 <body>
@@ -17,10 +25,12 @@
         <a href="{{ '/' | relative_url }}" class="site-title">Anna Aalto</a>
         <hr class="header-divider">
         <nav class="site-nav">
-          <a href="{{ '/gallery' | relative_url }}" {% if page.url contains '/gallery' %}class="active"{% endif %}>Gallery</a>
-          <a href="{{ '/news' | relative_url }}" {% if page.url contains '/news' %}class="active"{% endif %}>News</a>
+          <div class="nav-left">
+            <a href="{{ '/gallery' | relative_url }}" {% if page.url contains '/gallery' %}class="active"{% endif %}>Artworks</a>
+            <a href="{{ '/installations' | relative_url }}" {% if page.url == '/installations/' %}class="active"{% endif %}>Installations</a>
+            <a href="{{ '/news' | relative_url }}" {% if page.url contains '/news' %}class="active"{% endif %}>News</a>
+          </div>
           <a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
-          <a href="{{ '/inquiry' | relative_url }}" {% if page.url == '/inquiry/' %}class="active"{% endif %}>Inquiry</a>
         </nav>
       </div>
     </div>

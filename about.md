@@ -19,7 +19,7 @@ permalink: /about/
 
     <h2>Contact</h2>
 
-    <p>Feel free to reach out regarding art inquiries, exhibitions, or collaborations.</p>
+    <p>Feel free to reach out regarding art inquiries, installations, or collaborations.</p>
 
     <ul class="contact-info">
       <li><strong>Email:</strong><a href="mailto:aalto.anna.k@gmail.com">aalto.anna.k@gmail.com</a></li>

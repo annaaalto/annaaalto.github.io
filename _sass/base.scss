@@ -12,7 +12,7 @@ html {
   font-size: 16px;
   
   @media (max-width: $breakpoint-mobile) {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
@@ -32,6 +32,38 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
   font-weight: 700;
   @include spacing-responsive(margin-bottom, 0.5);
+}
+
+h1 {
+  font-size: $font-size-xxxlarge;
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-xxlarge;
+  }
+}
+
+h2 {
+  font-size: $font-size-xlarge;
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-large-alt;
+  }
+}
+
+h3 {
+  font-size: $font-size-large;
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-medium;
+  }
+}
+
+h4 {
+  font-size: $font-size-medium;
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: $font-size-base;
+  }
 }
 
 p {

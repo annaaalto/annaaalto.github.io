@@ -4,7 +4,7 @@ permalink: /gallery/
 ---
 
 <div class="gallery-grid yearly-gallery">
-  <h1 class="page-title">Gallery</h1>
+  <!-- <h1 class="page-title">Artworks</h1> -->
   
   <div class="gallery-filter-bar">
     <span class="filter-label">Filter by year:</span>
@@ -13,7 +13,8 @@ permalink: /gallery/
     <a href="{{ '/gallery/2023' | relative_url }}">2023</a>
   </div>
   
-  {% for artwork in site.artworks reversed %}
+  {% assign sorted_artworks = site.artworks | sort: "weight" | reverse %}
+  {% for artwork in sorted_artworks %}
   <div class="gallery-item yearly-item">
     <div class="gallery-image-container">
       {% picture gallery {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
@@ -26,4 +27,11 @@ permalink: /gallery/
     </div>
   </div>
   {% endfor %}
+  
+  <div class="gallery-cta-section">
+    <div class="gallery-cta-actions">
+      <a href="{{ '/installations' | relative_url }}" class="btn btn-primary">View Installations</a>
+      <a href="{{ '/about' | relative_url }}" class="btn btn-secondary">Artist Statement</a>
+    </div>
+  </div>
 </div> 

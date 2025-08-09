@@ -6,4 +6,5 @@ medium: "Oil and oil pastel"
 dimensions: "60 x 60 cm"
 year: 2024
 featured: true
+weight: 1000
 ---

@@ -1,7 +1,7 @@
-{% assign gallery_items = site.artworks | where: "year", include.year %}
+{% assign gallery_items = site.artworks | where: "year", include.year | sort: "weight" | reverse %}
 
 <div class="gallery-grid yearly-gallery">
-  <h1 class="page-title">Gallery</h1>
+  <!-- <h1 class="page-title">Gallery</h1> -->
   
   <div class="gallery-filter-bar">
     <span class="filter-label">Filter by year:</span>
@@ -22,4 +22,18 @@
     </div>
   </div>
   {% endfor %}
+  
+  {% if include.year == 2024 %}
+  <div class="gallery-cta">
+    <h3>Explore Earlier Works</h3>
+    <p>Discover paintings from my 2023 collection, where my artistic journey continued to evolve.</p>
+    <a href="{{ '/gallery/2023' | relative_url }}" class="cta-button">View 2023 Gallery</a>
+  </div>
+  {% elsif include.year == 2023 %}
+  <div class="gallery-cta">
+    <h3>Interested in My Work?</h3>
+    <p>I welcome inquiries about available artworks, commissions, and collaborations.</p>
+    <a href="{{ '/about' | relative_url }}" class="cta-button">Learn More</a>
+  </div>
+  {% endif %}
 </div> 

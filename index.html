@@ -9,22 +9,27 @@ title: Home
   <div class="hero-content">
     <h1 class="hero-title">Anna Aalto</h1>
     <div class="hero-actions">
-      <a href="{{ '/gallery/2024' | relative_url }}" class="btn btn-primary">See 2024 Works</a>
+      <a href="{{ '/gallery/2024' | relative_url }}" class="btn btn-primary">See Works</a>
       <a href="{{ '/about' | relative_url }}" class="btn btn-secondary">Artist Statement</a>
     </div>
   </div>
 </section>
 
-<section class="mobile-hero-cta">
-  <a href="{{ '/gallery/2024' | relative_url }}" class="btn btn-primary">See 2024 Works</a>
+<section class="hero-details">
+  {% assign hero_artwork = site.artworks | where: "image_filename", "15.+Kesäkuu,+yöllä.jpg" | first %}
+  {% if hero_artwork %}
+  <div class="hero-details-content">
+    <p class="hero-details-text">{{ hero_artwork.title }} • {{ hero_artwork.year }} • {{ hero_artwork.medium }}{% if hero_artwork.dimensions %}, {{ hero_artwork.dimensions }}{% endif %}</p>
+  </div>
+  {% endif %}
 </section>
 
 <section class="featured-works">
   <h2>Featured Works</h2>
   <div class="featured-grid">
-    {% assign featured_works = site.artworks | where: "featured", true | limit: 3 %}
+    {% assign featured_works = site.artworks | where: "featured", true | sort: "weight" | reverse | limit: 3 %}
     {% for artwork in featured_works %}
-    <div class="gallery-item">
+    <div class="gallery-item featured-item">
       <div class="gallery-image-container">
         {% picture thumb {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
       </div>
@@ -33,6 +38,9 @@ title: Home
         <p>{{ artwork.year }}</p>
         <p class="tiny-text">{{ artwork.medium }}{% if artwork.dimensions %}, {{ artwork.dimensions }}{% endif %}</p>
         <p class="tiny-text">{{ artwork.content }}</p>
+      </div>
+      <div class="featured-details">
+        <p class="featured-details-text">{{ artwork.title }} • {{ artwork.year }} • {{ artwork.medium }}{% if artwork.dimensions %}, {{ artwork.dimensions }}{% endif %}</p>
       </div>
     </div>
     {% endfor %}
