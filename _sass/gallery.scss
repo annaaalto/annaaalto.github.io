@@ -12,32 +12,31 @@
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $spacing-unit;
+  column-count: 1;
+  column-gap: $spacing-unit;
   margin-top: $spacing-unit;
   
   @media (min-width: $breakpoint-tablet) {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
   }
   
   @media (min-width: $breakpoint-desktop) {
-    grid-template-columns: repeat(3, 1fr);
+    column-count: 3;
   }
 }
 
 // Yearly gallery specific styles
 .yearly-gallery {
-  grid-template-columns: 1fr;
+  column-count: 1;
   max-width: $content-width-medium;
   margin: 0 auto;
   
   @media (min-width: $breakpoint-tablet) {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
   
   @media (min-width: $breakpoint-desktop) {
-    grid-template-columns: 1fr;
+    column-count: 1;
   }
 }
 
@@ -45,9 +44,15 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
+  break-inside: avoid;
+  margin-bottom: $spacing-unit;
   
   &:hover {
     transform: translateY(-5px);
+    
+    .gallery-image {
+      transform: scale(1.03);
+    }
     
     .gallery-item-info {
       opacity: 1;
@@ -70,6 +75,7 @@
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+    transition: transform 0.3s ease;
   }
   
   .gallery-item-info {
