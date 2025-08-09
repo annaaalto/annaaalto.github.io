@@ -50,6 +50,45 @@
       <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
     </div>
   </footer>
+
+  <script>
+    // Handle image loading for shimmer effect
+    document.addEventListener('DOMContentLoaded', function() {
+      // Handle hero image loading
+      const heroContainer = document.querySelector('.hero-image-container');
+      if (heroContainer) {
+        const heroImg = heroContainer.querySelector('img');
+        if (heroImg) {
+          if (heroImg.complete && heroImg.naturalHeight !== 0) {
+            // Image is already loaded
+            heroContainer.classList.add('loaded');
+          } else {
+            // Wait for image to load
+            heroImg.addEventListener('load', function() {
+              heroContainer.classList.add('loaded');
+            });
+          }
+        }
+      }
+
+      // Handle gallery image loading
+      const galleryContainers = document.querySelectorAll('.gallery-image-container');
+      galleryContainers.forEach(function(container) {
+        const img = container.querySelector('img');
+        if (img) {
+          if (img.complete && img.naturalHeight !== 0) {
+            // Image is already loaded
+            container.classList.add('loaded');
+          } else {
+            // Wait for image to load
+            img.addEventListener('load', function() {
+              container.classList.add('loaded');
+            });
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html> 
   

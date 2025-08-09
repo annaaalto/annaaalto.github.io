@@ -6,7 +6,10 @@ image: /assets/images/generated/15.+Kesäkuu,+yöllä.jpg
 ---
 
 <section class="home-hero">
-  {% picture hero 15.+Kesäkuu,+yöllä.jpg --alt "" class="hero-image" %}
+  {% assign hero_dimensions = "15.+Kesäkuu,+yöllä.jpg" | image_dimensions %}
+  <div class="hero-image-container" style="aspect-ratio: {{ hero_dimensions.aspect_ratio }};">
+    {% picture hero 15.+Kesäkuu,+yöllä.jpg --alt "" class="hero-image" %}
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-title">Anna Aalto</h1>
@@ -31,8 +34,9 @@ image: /assets/images/generated/15.+Kesäkuu,+yöllä.jpg
   <div class="featured-grid">
     {% assign featured_works = site.artworks | where: "featured", true | sort: "weight" | reverse | limit: 3 %}
     {% for artwork in featured_works %}
+    {% assign dimensions = artwork.image_filename | image_dimensions %}
     <div class="gallery-item featured-item">
-      <div class="gallery-image-container">
+      <div class="gallery-image-container" style="aspect-ratio: {{ dimensions.aspect_ratio }};">
         {% picture thumb {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
       </div>
       <div class="gallery-item-info">

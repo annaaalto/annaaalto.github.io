@@ -15,9 +15,10 @@ permalink: /gallery/
   
   {% assign sorted_artworks = site.artworks | sort: "weight" | reverse %}
   {% for artwork in sorted_artworks %}
+  {% assign dimensions = artwork.image_filename | image_dimensions %}
   <div class="gallery-item yearly-item">
-    <div class="gallery-image-container">
-      {% picture gallery {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
+    <div class="gallery-image-container" style="aspect-ratio: {{ dimensions.aspect_ratio }};">
+      {% picture gallery {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" onload="this.parentElement.classList.add('loaded')" %}
     </div>
     <div class="gallery-item-info visible-info">
       <h3>{{ artwork.title }}</h3>

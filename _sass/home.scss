@@ -11,15 +11,34 @@
   text-align: center;
   overflow: hidden;
   margin: 0;
-  
-  .hero-image {
+
+  .hero-image-container {
     width: 100%;
-    z-index: $z-index-background;
-    
-    img {
+    position: relative;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+
+    &.loaded {
+      animation: none;
+      background: none;
+    }
+
+    .hero-image {
       width: 100%;
-      height: auto;
-      display: block;
+      z-index: $z-index-background;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    &.loaded .hero-image {
+      opacity: 1;
     }
   }
   
@@ -195,13 +214,27 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite linear;
+
+      &.loaded {
+        animation: none;
+        background: none;
+      }
     }
     
     .gallery-image {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: transform 0.3s ease;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+      opacity: 0;
+    }
+
+    .gallery-image-container.loaded .gallery-image {
+      opacity: 1;
     }
     
     .gallery-item-info {

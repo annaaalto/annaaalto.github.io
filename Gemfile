@@ -9,5 +9,8 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17.0"
 end
 
+# For reading image dimensions
+gem "fastimage", "~> 2.3"
+
 # Add these gems for GitHub Actions compatibility
 gem "webrick", "~> 1.8"

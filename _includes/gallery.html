@@ -10,8 +10,9 @@
     <a href="{{ '/gallery/2023' | relative_url }}" {% if include.year == 2023 %}class="active"{% endif %}>2023</a>
   </div>
   {% for artwork in gallery_items %}
+  {% assign dimensions = artwork.image_filename | image_dimensions %}
   <div class="gallery-item yearly-item">
-    <div class="gallery-image-container">
+    <div class="gallery-image-container" style="aspect-ratio: {{ dimensions.aspect_ratio }};">
       {% picture gallery {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
     </div>
     <div class="gallery-item-info visible-info">
