@@ -6,7 +6,7 @@
   {% for artwork in gallery_items %}
   <div class="gallery-item yearly-item">
     <div class="gallery-image-container">
-      <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}" class="gallery-image">
+      {% picture thumb {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
     </div>
     <div class="gallery-item-info visible-info">
       <h3>{{ artwork.title }}</h3>

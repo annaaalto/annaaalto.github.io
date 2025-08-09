@@ -22,7 +22,7 @@ permalink: /gallery/
   {% for artwork in site.artworks %}
   <div class="gallery-item">
     <div class="gallery-image-container">
-      <img src="{{ artwork.image | relative_url }}" alt="{{ artwork.title }}" class="gallery-image">
+      {% picture thumb {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
     </div>
     <div class="gallery-item-info">
       <h3>{{ artwork.title }}</h3>

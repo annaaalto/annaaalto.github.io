@@ -24,17 +24,10 @@ collections:
   artworks:
     output: false
 
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .gitignore
-
 picture:
-  source: "assets/images/src" # originals live here
-  output: "assets/images/generated" # plugin writes here (ignored by git)
-  markup: "html" # default <picture> markup
+  source: "assets/images/src"
+  output: "assets/images/generated"
+  markup: "html"
   presets:
     thumb:
       formats: [webp, jpeg]
@@ -48,3 +41,10 @@ picture:
       fallback_width: 1280
       img_attributes:
         decoding: async
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .gitignore
