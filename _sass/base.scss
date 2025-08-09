@@ -1,3 +1,7 @@
+@use "sass:math";
+@use "sass:color";
+@use "variables" as *;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,11 +23,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font;
   font-weight: 700;
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: math.div($spacing-unit, 2);
 }
 
 p {
-  margin-bottom: $spacing-unit / 2;
+  margin-bottom: math.div($spacing-unit, 2);
 }
 
 a {
@@ -45,7 +49,7 @@ img {
   width: 100%;
   max-width: $container-width;
   margin: 0 auto;
-  padding: 0 $spacing-unit / 2;
+  padding: 0 math.div($spacing-unit, 2);
 }
 
 .btn {
@@ -58,7 +62,7 @@ img {
   transition: background-color 0.3s ease;
   
   &:hover {
-    background-color: lighten($primary-color, 15%);
+    background-color: color.adjust($primary-color, $lightness: 15%, $space: hsl);
     text-decoration: none;
   }
 } 

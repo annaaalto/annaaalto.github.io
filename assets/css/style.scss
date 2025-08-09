@@ -2,9 +2,11 @@
 # Main stylesheet
 ---
 
-@import "variables";
-@import "base";
-@import "layout";
-@import "gallery";
-@import "gallery-sections";
-@import "home"; 
+@use "sass:math";
+@use "sass:color";
+@use "variables" as *;
+@use "base";
+@use "layout";
+@use "gallery";
+@use "gallery-sections";
+@use "home"; 

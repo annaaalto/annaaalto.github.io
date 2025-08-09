@@ -1,3 +1,7 @@
+@use "sass:math";
+@use "sass:color";
+@use "variables" as *;
+
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -68,12 +72,12 @@
     right: 0;
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: $spacing-unit / 2;
+    padding: math.div($spacing-unit, 2);
     opacity: 0;
     transition: opacity 0.3s ease;
     
     h3 {
-      margin-bottom: $spacing-unit / 4;
+      margin-bottom: math.div($spacing-unit, 4);
       font-size: 1.1rem;
     }
     
@@ -111,7 +115,7 @@
     opacity: 1;
     background: none;
     color: inherit;
-    padding: $spacing-unit / 2 0;
+    padding: math.div($spacing-unit, 2) 0;
     
     h3 {
       font-size: 1.2rem;
@@ -148,7 +152,7 @@
     margin-bottom: $spacing-unit;
     
     p {
-      margin-bottom: $spacing-unit / 4;
+      margin-bottom: math.div($spacing-unit, 4);
     }
   }
   
