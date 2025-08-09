@@ -217,4 +217,12 @@
       }
     }
   }
+}
+
+.featured-cta {
+  @include spacing-responsive(margin-top, 2);
+  
+  & {
+    text-align: center;
+  }
 } 

@@ -1,8 +1,14 @@
 {% assign gallery_items = site.artworks | where: "year", include.year %}
 
-
 <div class="gallery-grid yearly-gallery">
-  <h1 class="page-title">Works from {{ include.year }}</h1>
+  <h1 class="page-title">Gallery</h1>
+  
+  <div class="gallery-filter-bar">
+    <span class="filter-label">Filter by year:</span>
+    <a href="{{ '/gallery' | relative_url }}" {% unless include.year %}class="active"{% endunless %}>ALL</a>
+    <a href="{{ '/gallery/2024' | relative_url }}" {% if include.year == 2024 %}class="active"{% endif %}>2024</a>
+    <a href="{{ '/gallery/2023' | relative_url }}" {% if include.year == 2023 %}class="active"{% endif %}>2023</a>
+  </div>
   {% for artwork in gallery_items %}
   <div class="gallery-item yearly-item">
     <div class="gallery-image-container">

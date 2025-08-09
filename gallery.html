@@ -1,30 +1,24 @@
 ---
 layout: page
-title: Gallery
 permalink: /gallery/
 ---
 
-<div class="gallery-sections">
-  <a href="{{ '/gallery/2024/' | relative_url }}" class="gallery-section">
-    <h2>2024 Works</h2>
-    <p>View the latest collection</p>
-  </a>
+<div class="gallery-grid yearly-gallery">
+  <h1 class="page-title">Gallery</h1>
   
-  <a href="{{ '/gallery/2023/' | relative_url }}" class="gallery-section">
-    <h2>2023 Works</h2>
-    <p>View the previous collection</p>
-  </a>
+  <div class="gallery-filter-bar">
+    <span class="filter-label">Filter by year:</span>
+    <a href="{{ '/gallery' | relative_url }}" class="active">ALL</a>
+    <a href="{{ '/gallery/2024' | relative_url }}">2024</a>
+    <a href="{{ '/gallery/2023' | relative_url }}">2023</a>
+  </div>
   
-  <!-- Add links to other year collections as needed -->
-</div>
-
-<div class="gallery-grid">
-  {% for artwork in site.artworks %}
-  <div class="gallery-item">
+  {% for artwork in site.artworks reversed %}
+  <div class="gallery-item yearly-item">
     <div class="gallery-image-container">
       {% picture thumb {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
     </div>
-    <div class="gallery-item-info">
+    <div class="gallery-item-info visible-info">
       <h3>{{ artwork.title }}</h3>
       <p>{{ artwork.year }}</p>
       <p class="tiny-text">{{ artwork.medium }}{% if artwork.dimensions %}, {{ artwork.dimensions }}{% endif %}</p>

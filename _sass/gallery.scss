@@ -11,6 +11,52 @@
   }
 }
 
+.gallery-filter-bar {
+  @include spacing-responsive(margin-bottom, 1.1);
+  @include spacing-responsive(padding-bottom, 0.1);
+  @include spacing-responsive(gap, 0.5);
+  
+  & {
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+  
+  .filter-label {
+    @include spacing-responsive-xy(margin-right, 0.8, 0);
+    
+    & {
+      font-weight: 500;
+      color: color.adjust($text-color, $lightness: 15%, $space: hsl);
+      font-size: $font-size-small;
+    }
+  }
+  
+  a {
+    @include spacing-responsive-xy(padding, 0.4, 0.2);
+    
+    & {
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    &:hover {
+      text-decoration: underline;
+    }
+    
+    &.active {
+      font-weight: 700;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
 .gallery-grid {
   column-count: 1;
   column-gap: $spacing-unit;

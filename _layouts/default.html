@@ -17,10 +17,10 @@
         <a href="{{ '/' | relative_url }}" class="site-title">Anna Aalto</a>
         <hr class="header-divider">
         <nav class="site-nav">
-          <a href="{{ '/gallery/2024' | relative_url }}" {% if page.url contains '/gallery/2024' %}class="active"{% endif %}>2024</a>
-          <a href="{{ '/gallery/2023' | relative_url }}" {% if page.url contains '/gallery/2023' %}class="active"{% endif %}>2023</a>
+          <a href="{{ '/gallery' | relative_url }}" {% if page.url contains '/gallery' %}class="active"{% endif %}>Gallery</a>
           <a href="{{ '/news' | relative_url }}" {% if page.url contains '/news' %}class="active"{% endif %}>News</a>
           <a href="{{ '/about' | relative_url }}" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
+          <a href="{{ '/inquiry' | relative_url }}" {% if page.url == '/inquiry/' %}class="active"{% endif %}>Inquiry</a>
         </nav>
       </div>
     </div>
