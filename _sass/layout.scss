@@ -3,8 +3,8 @@
 @use "variables" as *;
 
 .site-header {
-  padding: $spacing-unit 0;
-  margin: 0 $spacing-unit;
+  @include spacing-responsive-xy(padding, 0, 1);
+  @include spacing-responsive-xy(margin, 1, 0);
   
   .container {
     display: flex;
@@ -21,9 +21,9 @@
   }
   
   .site-title {
-    font-size: 2.5rem;
+    font-size: $font-size-xxxlarge;
     font-weight: 700;
-    padding-bottom: 5px;
+    @include spacing-responsive(padding-bottom, 0.167);
     
     &:hover {
       text-decoration: none;
@@ -35,13 +35,14 @@
     border: 0;
     height: 1px;
     background-color: $primary-color;
-    margin: 0 0 math.div($spacing-unit, 2) 0;
+    margin: 0;
+    @include spacing-responsive(margin-bottom, 0.5);
   }
   
   .site-nav {
     display: flex;
-    gap: $spacing-unit;
-    padding-top: 5px;
+    @include spacing-responsive(gap, 1);
+    @include spacing-responsive(padding-top, 0.167);
     
     a {
       font-weight: 500;
@@ -55,25 +56,31 @@
 }
 
 .site-content {
-  padding: 0 $spacing-unit 0 $spacing-unit;
+  @include spacing-responsive-xy(padding, 1, 0);
 }
 
 .site-footer {
-  padding: $spacing-unit 0;
-  border-top: 1px solid $border-color;
-  text-align: center;
-  font-size: 0.875rem;
-  color: color.adjust($text-color, $lightness: 20%, $space: hsl);
+  @include spacing-responsive-xy(padding, 0, 1);
+  
+  & {
+    border-top: 1px solid $border-color;
+    text-align: center;
+    font-size: $font-size-xsmall;
+    color: color.adjust($text-color, $lightness: 20%, $space: hsl);
+  }
 } 
 
 // About page styling
 .about-section {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: $spacing-unit * 2;
-  margin-bottom: $spacing-unit;
+  @include spacing-responsive(gap, 2);
+  @include spacing-responsive(margin-bottom, 1);
   
-  @media (max-width: 768px) {
+  & {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
     flex-direction: column;
   }
   
@@ -91,14 +98,20 @@
     flex: 1;
     
     p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
+      @include spacing-responsive(margin-bottom, 0.533); // ~1rem equivalent
+      
+      & {
+        line-height: 1.6;
+      }
     }
     
     h2 {
-      margin-top: 1.75rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
+      @include spacing-responsive(margin-top, 0.933); // ~1.75rem equivalent
+      @include spacing-responsive(margin-bottom, 0.533); // ~1rem equivalent
+      
+      & {
+        font-weight: 700;
+      }
     }
     
     .contact-info {
@@ -107,12 +120,15 @@
       margin: 0;
       
       li {
-        margin-bottom: 0.5rem;
-        display: flex;
-        align-items: baseline;
+        @include spacing-responsive(margin-bottom, 0.267); // ~0.5rem equivalent
+        
+        & {
+          display: flex;
+          align-items: baseline;
+        }
         
         strong {
-          margin-right: 0.5rem;
+          @include spacing-responsive(margin-right, 0.267); // ~0.5rem equivalent
         }
         
         a {

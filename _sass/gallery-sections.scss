@@ -1,24 +1,29 @@
+@use "variables" as *;
+
 .gallery-sections {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: $spacing-lg;
+  @include spacing-responsive(margin-bottom, 1.333);
 }
 
 .gallery-section {
-  flex: 1;
-  min-width: 250px;
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s ease;
+  @include spacing-responsive(padding, 0.667);
+  
+  & {
+    flex: 1;
+    min-width: $gallery-section-min-width;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    text-decoration: none;
+    color: inherit;
+    transition: all $transition-duration $transition-easing;
+  }
 }
 
 .gallery-section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY($hover-lift);
+  box-shadow: 0 $spacing-xs $spacing-md $shadow-color;
 }
 
 .gallery-section h2 {

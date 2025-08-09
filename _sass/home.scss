@@ -32,20 +32,20 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 600px;
+    max-width: $content-width-medium;
     padding: $spacing-unit;
     
     p {
-      font-size: 1.3rem;
+      font-size: $font-size-large-alt;
       margin-bottom: $spacing-unit;
       line-height: 1.6;
       font-weight: 500;
-      color: #333;
+      color: $text-color;
     }
   }
   
   h1 {
-    font-size: 3rem;
+    font-size: $font-size-hero;
     margin-bottom: $spacing-unit;
   }
 }
@@ -62,11 +62,11 @@
     column-count: 1;
     column-gap: $spacing-unit;
     
-    @media (min-width: 768px) {
+    @media (min-width: $breakpoint-tablet) {
       column-count: 2;
     }
     
-    @media (min-width: 1024px) {
+    @media (min-width: $breakpoint-desktop) {
       column-count: 3;
     }
   }
@@ -100,24 +100,24 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.7);
-      color: white;
+      background: $overlay-background;
+      color: $white;
       padding: math.div($spacing-unit, 2);
       opacity: 0;
       transition: opacity 0.3s ease;
       
       h3 {
         margin-bottom: math.div($spacing-unit, 4);
-        font-size: 1.1rem;
+        font-size: $font-size-medium;
       }
       
       p {
-        font-size: 0.9rem;
+        font-size: $font-size-small;
         margin-bottom: 0;
       }
       
       .tiny-text {
-        font-size: 0.7rem;
+        font-size: $font-size-tiny;
         margin-top: 0.25rem;
         opacity: 0.8;
       }

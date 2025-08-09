@@ -3,13 +3,100 @@ $primary-color: #000;
 $secondary-color: #333;
 $background-color: #fff;
 $text-color: #333;
+$text-color-muted: #666;
 $border-color: #eee;
+$white: #fff;
+
+// Overlay and transparency
+$overlay-background: rgba(0, 0, 0, 0.7);
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Opacity values
+$opacity-disabled: 0.3;
+$opacity-hero-bg: 0.5;
+$opacity-overlay: 0.8;
 
 // Typography
 $base-font: "Merriweather", "Georgia", "Times New Roman", serif;
 $heading-font: "Libre Baskerville", "Georgia", "Times New Roman", serif;
 $mono-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
-// Spacing
-$spacing-unit: 30px;
-$container-width: 1000px; 
+// Font sizes
+$font-size-tiny: 0.7rem;
+$font-size-xsmall: 0.875rem; // 14px equivalent 
+$font-size-small: 0.9rem;
+$font-size-base: 1rem;
+$font-size-medium: 1.1rem;
+$font-size-large: 1.2rem;
+$font-size-large-alt: 1.3rem;
+$font-size-xlarge: 1.8rem;
+$font-size-xxlarge: 2.2rem;
+$font-size-xxxlarge: 2.5rem;
+$font-size-hero: 3rem;
+
+// Spacing - everything relative to spacing-unit for consistency
+$spacing-unit: 30px; // Desktop base
+$spacing-unit-mobile: 20px; // Mobile base (smaller)
+
+// Responsive spacing function
+$spacing-xs: $spacing-unit * 0.167; // ~5px desktop, ~3.3px mobile
+$spacing-sm: $spacing-unit * 0.333; // ~10px desktop, ~6.7px mobile  
+$spacing-md: $spacing-unit * 0.5; // ~15px desktop, ~10px mobile
+$spacing-lg: $spacing-unit * 0.667; // ~20px desktop, ~13.3px mobile
+$spacing-xl: $spacing-unit * 1.333; // ~40px desktop, ~26.7px mobile
+
+// Common fractions
+$spacing-quarter: $spacing-unit * 0.25;
+$spacing-half: $spacing-unit * 0.5;
+$spacing-double: $spacing-unit * 2;
+$spacing-triple: $spacing-unit * 3;
+
+// Layout dimensions
+$container-width: 1000px;
+$content-width-medium: 600px; // Used for hero content, yearly gallery
+$content-width-large: 800px;  // Used for artwork pages
+$gallery-section-min-width: 250px;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Z-index scale
+$z-index-background: 1;
+$z-index-content: 2;
+$z-index-overlay: 10;
+
+// Animations
+$transition-duration: 0.3s;
+$transition-easing: ease;
+
+// Transforms
+$hover-lift: -5px;
+$hover-scale: 1.03;
+$color-adjust-amount: 15%;
+
+// Border radius
+$border-radius-sm: $spacing-unit * 0.1; // ~3px desktop, ~2px mobile
+$border-radius: $spacing-unit * 0.133; // ~4px desktop, ~2.7px mobile
+
+// Responsive spacing mixins - fixed to avoid mixed declarations warning
+@mixin spacing-responsive($property, $multiplier: 1) {
+  & {
+    #{$property}: $spacing-unit * $multiplier;
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
+    #{$property}: $spacing-unit-mobile * $multiplier;
+  }
+}
+
+@mixin spacing-responsive-xy($property, $x-multiplier: 1, $y-multiplier: 1) {
+  & {
+    #{$property}: ($spacing-unit * $y-multiplier) ($spacing-unit * $x-multiplier);
+  }
+  
+  @media (max-width: $breakpoint-tablet) {
+    #{$property}: ($spacing-unit-mobile * $y-multiplier) ($spacing-unit-mobile * $x-multiplier);
+  }
+} 
