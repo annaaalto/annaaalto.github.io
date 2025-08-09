@@ -4,9 +4,11 @@ title: Home
 ---
 
 <section class="home-hero">
-  <h1>Anna Aalto</h1>
-  <p>A collection of artworks created with passion and dedication. Explore the gallery to discover unique pieces that tell stories and evoke emotions.</p>
-  <a href="{{ '/gallery' | relative_url }}" class="btn">View Gallery</a>
+  {% picture hero 15.+Kesäkuu,+yöllä.jpg --alt "" class="hero-background" %}
+  <div class="hero-content">
+    <p>I am interested in memory and memories. My paintings explore moments in time I want to return to—the mystery of remembering and forgetting, where experiences layer and intertwine in our minds.</p>
+    <a href="{{ '/gallery' | relative_url }}" class="btn">View Gallery</a>
+  </div>
 </section>
 
 <section class="featured-works">
