@@ -4,10 +4,14 @@ title: Home
 ---
 
 <section class="home-hero">
-  {% picture hero 15.+Kesäkuu,+yöllä.jpg --alt "" class="hero-background" %}
+  {% picture hero 15.+Kesäkuu,+yöllä.jpg --alt "" class="hero-image" %}
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p>I am interested in memory and memories. My paintings explore moments in time I want to return to—the mystery of remembering and forgetting, where experiences layer and intertwine in our minds.</p>
-    <a href="{{ '/gallery' | relative_url }}" class="btn">View Gallery</a>
+    <h1 class="hero-title">Anna Aalto</h1>
+    <div class="hero-actions">
+      <a href="{{ '/gallery/2024' | relative_url }}" class="btn btn-primary">See 2024 Works</a>
+      <a href="{{ '/about' | relative_url }}" class="btn btn-secondary">Artist Statement</a>
+    </div>
   </div>
 </section>
 
