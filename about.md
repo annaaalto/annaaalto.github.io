@@ -6,7 +6,7 @@ permalink: /about/
 
 <div class="about-section">
   <div class="about-image-container">
-    {% picture thumb Kuva+Anna+Kalleriassa.jpg --alt Anna Aalto %}
+    {% picture gallery Kuva+Anna+Kalleriassa.jpg --alt Anna Aalto %}
   </div>
   <div class="about-content">
     <p>I live and work in Helsinki, Finland. I am a lawyer by education. The need for creative expression existed in me for a long time, but it was only through life experiences that I started working artistically. Painting opened a door to silence and reflection.</p>

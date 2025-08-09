@@ -16,7 +16,7 @@ permalink: /gallery/
   {% for artwork in site.artworks reversed %}
   <div class="gallery-item yearly-item">
     <div class="gallery-image-container">
-      {% picture thumb {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
+      {% picture gallery {{ artwork.image_filename }} --alt {{ artwork.title }} class="gallery-image" %}
     </div>
     <div class="gallery-item-info visible-info">
       <h3>{{ artwork.title }}</h3>
