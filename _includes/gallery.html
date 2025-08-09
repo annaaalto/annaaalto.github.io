@@ -1,8 +1,8 @@
 {% assign gallery_items = site.artworks | where: "year", include.year %}
 
-<h1 class="page-title">Works from {{ include.year }}</h1>
 
 <div class="gallery-grid yearly-gallery">
+  <h1 class="page-title">Works from {{ include.year }}</h1>
   {% for artwork in gallery_items %}
   <div class="gallery-item yearly-item">
     <div class="gallery-image-container">

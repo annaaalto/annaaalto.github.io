@@ -2,6 +2,15 @@
 @use "sass:color";
 @use "variables" as *;
 
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -20,7 +29,7 @@
 // Yearly gallery specific styles
 .yearly-gallery {
   grid-template-columns: 1fr;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   
   @media (min-width: 768px) {
@@ -48,7 +57,6 @@
   img {
     width: 100%;
     height: auto;
-    max-height: 300px;
     object-fit: contain;
   }
   
@@ -56,7 +64,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
   }
   
   .gallery-image {
@@ -102,14 +109,6 @@
     transform: none;
   }
   
-  .gallery-image-container {
-    height: 500px;
-  }
-  
-  img, .gallery-image {
-    max-height: 500px;
-  }
-  
   .visible-info {
     position: static;
     opacity: 1;
@@ -143,7 +142,6 @@
     margin-bottom: $spacing-unit;
     
     img {
-      max-height: 70vh;
       margin: 0 auto;
     }
   }

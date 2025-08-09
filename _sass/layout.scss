@@ -4,7 +4,7 @@
 
 .site-header {
   padding: $spacing-unit 0;
-  margin-bottom: $spacing-unit;
+  margin: 0 $spacing-unit;
   
   .container {
     display: flex;
@@ -55,8 +55,7 @@
 }
 
 .site-content {
-  min-height: calc(100vh - 200px);
-  padding: $spacing-unit 0 $spacing-unit * 2;
+  padding: 0 $spacing-unit 0 $spacing-unit;
 }
 
 .site-footer {
