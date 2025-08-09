@@ -1,10 +1,11 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.9.0"
-gem "github-pages", group: :jekyll_plugins
-gem "webrick", "~> 1.7"
+gem "jekyll", "~> 4.4"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.15.1"
-  gem "jekyll-seo-tag", "~> 2.7.1"
-end 
+  gem "jekyll_picture_tag", "~> 2.0"   # responsive images / downscaling
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+end
+
+gem "jekyll-feed", "~> 0.17.0", group: :jekyll_plugins

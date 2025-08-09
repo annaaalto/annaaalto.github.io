@@ -9,6 +9,8 @@ permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll_picture_tag
+  - jekyll-sitemap
 
 sass:
   style: compressed
@@ -28,3 +30,21 @@ exclude:
   - node_modules
   - vendor
   - .gitignore
+
+picture:
+  source: "assets/images/src" # originals live here
+  output: "assets/images/generated" # plugin writes here (ignored by git)
+  markup: "html" # default <picture> markup
+  presets:
+    thumb:
+      formats: [webp, jpeg]
+      widths: [320, 640]
+      fallback_width: 640
+      attributes:
+        loading: lazy
+    hero:
+      formats: [avif, webp, jpeg]
+      widths: [640, 960, 1280, 1600, 2000]
+      fallback_width: 1280
+      img_attributes:
+        decoding: async
