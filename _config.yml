@@ -1,7 +1,18 @@
 title: Anna Aalto
-description: Anna Aalto - Artist Portfolio
+description: Anna Aalto - Artist based in Helsinki, Finland.
 baseurl: ""
 url: ""
+
+# SEO metadata
+author: Anna Aalto
+location: Helsinki, Finland
+social:
+  name: Anna Aalto
+  links:
+    - https://instagram.com/paintings_by_anna_aalto
+
+# Default social sharing image
+image: /assets/images/generated/15.+Kesäkuu,+yöllä.jpg
 
 # Build settings
 markdown: kramdown
