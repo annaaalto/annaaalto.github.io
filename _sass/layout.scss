@@ -172,8 +172,47 @@
       border: none;
       cursor: pointer;
       transition: all $transition-duration $transition-easing;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
+      display: inline-block;
+      
+      @media (max-width: $breakpoint-mobile) {
+        width: auto;
+        max-width: 280px;
+      }
+    }
+    
+    .btn-primary {
+      background-color: $primary-color;
+      color: $white;
+      padding: $spacing-md $spacing-xl;
+      border-radius: $border-radius;
+      
+      &:hover {
+        transform: translateY(-2px);
+        text-decoration: none;
+      }
+      
+      @media (max-width: $breakpoint-mobile) {
+        padding: $spacing-md $spacing-lg;
+      }
+    }
+  }
+}
+
+// Global About CTA styling
+.global-about-cta {
+  @include spacing-responsive-xy(padding, 1, 1);
+  
+  .about-cta-content {
+    text-align: center;
+    
+    .btn {
+      font-family: $heading-font;
+      font-size: $font-size-small;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all $transition-duration $transition-easing;
       display: inline-block;
       
       @media (max-width: $breakpoint-mobile) {

@@ -217,54 +217,53 @@
   }
 }
 
-// Gallery CTA styling
+// Gallery CTA styling - clean button style only
 .gallery-cta {
-  @include spacing-responsive(margin-top, 2);
-  @include spacing-responsive(padding, 1.5);
+  margin-top: 0;
+  padding-top: 0;
+  @include spacing-responsive(margin-bottom, 2);
   
   & {
     text-align: center;
-    border: 1px solid $border-color;
-    border-radius: 8px;
-    background-color: color.adjust($background-color, $lightness: -2%, $space: hsl);
-  }
-  
-  h3 {
-    @include spacing-responsive(margin-bottom, 0.5);
-    
-    & {
-      font-weight: 700;
-      font-size: $font-size-large;
-    }
-  }
-  
-  p {
-    @include spacing-responsive(margin-bottom, 1);
-    
-    & {
-      line-height: 1.6;
-      color: color.adjust($text-color, $lightness: 10%, $space: hsl);
-    }
   }
   
   .cta-button {
-    @include spacing-responsive(padding-y, 0.75);
-    @include spacing-responsive(padding-x, 1.5);
-    
-    & {
-      display: inline-block;
-      background-color: $primary-color;
-      color: $background-color;
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-    }
+    font-family: $heading-font;
+    font-size: $font-size-small;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all $transition-duration $transition-easing;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    background-color: $primary-color;
+    color: $white;
+    padding: $spacing-md $spacing-xl;
+    border-radius: $border-radius;
     
     &:hover {
-      background-color: color.adjust($primary-color, $lightness: -10%, $space: hsl);
+      transform: translateY(-2px);
       text-decoration: none;
-      transform: translateY(-1px);
+    }
+    
+    @media (max-width: $breakpoint-mobile) {
+      padding: $spacing-md $spacing-lg;
+      width: auto;
+      max-width: 280px;
+    }
+  }
+  
+  .cta-button.btn-secondary {
+    background-color: transparent;
+    color: $primary-color;
+    padding: $spacing-md $spacing-lg;
+    border: 2px solid $primary-color;
+    
+    &:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
     }
   }
 }
@@ -291,8 +290,6 @@
       border: none;
       cursor: pointer;
       transition: all $transition-duration $transition-easing;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
       display: inline-block;
       
       @media (max-width: $breakpoint-mobile) {

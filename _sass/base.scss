@@ -111,6 +111,8 @@ img {
     font-weight: 500;
     transition: background-color $transition-duration $transition-easing;
     min-height: 44px; // Touch-friendly minimum
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
   
   &:hover {

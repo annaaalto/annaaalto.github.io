@@ -49,7 +49,7 @@
     @media (max-width: $breakpoint-tablet) {
       gap: $spacing-unit;
       padding: $spacing-unit-mobile;
-      padding-bottom: $spacing-unit-mobile * 2;
+      padding-bottom: $spacing-unit-mobile;
     }
   }
   
@@ -86,15 +86,12 @@
     
     .btn {
       font-family: $heading-font;
-      font-size: $font-size-medium;
+      font-size: $font-size-small;
       font-weight: 500;
       text-decoration: none;
       border: none;
       cursor: pointer;
       transition: all $transition-duration $transition-easing;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      font-size: $font-size-small;
       
       @media (max-width: $breakpoint-mobile) {
         width: 100%;
@@ -113,7 +110,8 @@
       }
       
       @media (max-width: $breakpoint-mobile) {
-        background-color: transparent;
+        background-color: rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(2.5px);
         color: $white;
         padding: $spacing-md $spacing-lg;
         border: 2px solid $white;
@@ -301,8 +299,6 @@
     border: none;
     cursor: pointer;
     transition: all $transition-duration $transition-easing;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
     display: inline-block;
     
     @media (max-width: $breakpoint-mobile) {

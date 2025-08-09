@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Anna Aalto
+title: About Me
 permalink: /about/
 ---
 
